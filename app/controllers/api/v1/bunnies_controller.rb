@@ -1,9 +1,8 @@
 class Api::V1::BunniesController < ApplicationController
     
     def index
-        bunnnies = Bunny.all
-        #rendor json: bunnies
-        rendor json: BunnySerializer.new(bunnies)
+        bunnies = Bunny.all
+        render json: BunnySerializer.new(bunnies)
     end
 
     def create
