@@ -1,6 +1,6 @@
 require "test_helper"
 
-class AdoptedByTest < ActiveSupport::TestCase
+class PersonTest < ActiveSupport::TestCase
   # test "the truth" do
   #   assert true
   # end

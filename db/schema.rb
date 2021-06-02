@@ -10,21 +10,23 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_06_02_032043) do
-
-  create_table "adopted_bies", force: :cascade do |t|
-    t.string "name"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-  end
+ActiveRecord::Schema.define(version: 2021_06_02_174819) do
 
   create_table "bunnies", force: :cascade do |t|
     t.string "name"
     t.string "bio"
     t.string "image_url"
-    t.integer "adoptedby_id"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.integer "person_id", null: false
+    t.index ["person_id"], name: "index_bunnies_on_person_id"
+  end
+
+  create_table "people", force: :cascade do |t|
+    t.string "name"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
 
+  add_foreign_key "bunnies", "people"
 end

@@ -4,7 +4,6 @@ class CreateBunnies < ActiveRecord::Migration[6.1]
       t.string :name
       t.string :bio
       t.string :image_url
-      t.integer :adoptedby_id
 
       t.timestamps
     end
