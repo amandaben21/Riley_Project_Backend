@@ -4,10 +4,10 @@ one:
   name: MyString
   bio: MyString
   image_url: MyString
-  adoptedby_id: 1
+  AdoptedBy_id: 1
 
 two:
   name: MyString
   bio: MyString
   image_url: MyString
-  adoptedby_id: 1
+  AdoptedBy_id: 1
