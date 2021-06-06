@@ -1,5 +1,5 @@
 class Bunny < ApplicationRecord
-    belongs_to :feeling
+    belongs_to :breed
     
-    validates :name, :bio, :image_url, :feeling_id, presence: true
+    validates :name, :age, :gender, :color, :weight, :bio, :image_url, :breed_id, presence: true
 end

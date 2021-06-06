@@ -3,7 +3,7 @@ Rails.application.routes.draw do
   namespace :api do
     namespace :v1 do
       resources :bunnies, only: [:index, :create]
-      resources :feelings, only: [:index]
+      resources :breeds, only: [:index]
     end
   end
  

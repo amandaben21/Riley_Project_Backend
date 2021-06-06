@@ -10,23 +10,27 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_06_04_021459) do
+ActiveRecord::Schema.define(version: 2021_06_05_235215) do
+
+  create_table "breeds", force: :cascade do |t|
+    t.string "name"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
 
   create_table "bunnies", force: :cascade do |t|
-    t.string "name"
-    t.string "bio"
     t.string "image_url"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-    t.integer "feeling_id", null: false
-    t.index ["feeling_id"], name: "index_bunnies_on_feeling_id"
-  end
-
-  create_table "feelings", force: :cascade do |t|
     t.string "name"
+    t.integer "age"
+    t.string "gender"
+    t.string "color"
+    t.integer "weight"
+    t.string "bio"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.integer "breed_id", null: false
+    t.index ["breed_id"], name: "index_bunnies_on_breed_id"
   end
 
-  add_foreign_key "bunnies", "feelings"
+  add_foreign_key "bunnies", "breeds"
 end

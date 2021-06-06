@@ -7,15 +7,16 @@ class Api::V1::BunniesController < ApplicationController
 
     def create
         bunny = Bunny.new(bunny_params)
+        
         if bunny.save
-            render json: bunny, status: :accepted
+            render json: BunnySerializer.new(bunny), status: :accepted
         else
-            render json: {errors: syllabus.errors.full_messages}, status: :unprocessible_entity
+            render json: {errors: bunny.errors.full_messages}, status: :unprocessible_entity
         end
     end
 
     private
     def bunny_params
-        params require(:bunny).permit(:name, :bio, :image_url, :person_id)
+        params.require(:bunny).permit(:name, :age, :gender, :color, :weight, :bio, :image_url, :breed_id)
     end
 end

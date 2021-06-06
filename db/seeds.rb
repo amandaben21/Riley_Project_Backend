@@ -6,7 +6,7 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-sad = Feeling.create(name: "Sad")
-happy = Feeling.create(name: "Happy")
+lionhead = Breed.create(name: "Lionhead")
+rex = Breed.create(name: "Rex")
 
-Bunny.create(name: "Jasmine", bio:"Jasmine is feeling a little sick today", image_url:"https://www.smdp.com/wp-content/uploads/2020/04/BUNNY_-Snowflake.jpg", feeling_id: sad.id)
+Bunny.create(name: 'Test', age:'3', gender:'Male', color: 'white', weight:'5 lbs', bio: 'Rescue', image_url:'https://www.smdp.com/wp-content/uploads/2020/04/BUNNY_-Snowflake.jpg', breed_id: rex.id)

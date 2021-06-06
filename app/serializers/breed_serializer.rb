@@ -1,4 +1,4 @@
-class FeelingSerializer
+class BreedSerializer
   include FastJsonapi::ObjectSerializer
   attributes :name
 end
